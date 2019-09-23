@@ -46,9 +46,9 @@ public class CommunityBridge extends JavaPlugin
 		setupEnvironment();
 		javaVersionCheck();
 
-		if (StringUtilities.compareVersion(MinecraftUtilities.getBukkitVersion(), "1.7.9") < 0)
+		if (StringUtilities.compareVersion(MinecraftUtilities.getBukkitVersion(), "1.9") < 0)
 		{
-			environment.getLog().severe("This version of CommunityBridge requires Bukkit 1.7.9 or later.");
+			environment.getLog().severe("This version of CommunityBridge requires Bukkit 1.9 or later.");
 			Bukkit.getPluginManager().disablePlugin(this);
 			return;
 		}
@@ -344,6 +344,16 @@ public class CommunityBridge extends JavaPlugin
 				else if (environment.getConfiguration().permissionsSystem.equalsIgnoreCase("Vault"))
 				{
 					permsGraph.addPlotter(new CBMetrics.Plotter("Vault")
+					{
+						@Override
+						public int getValue()
+						{
+							return 1;
+						}
+					});
+				}else if (environment.getConfiguration().permissionsSystem.equalsIgnoreCase("LuckPerms"))
+				{
+					permsGraph.addPlotter(new CBMetrics.Plotter("LuckPerms")
 					{
 						@Override
 						public int getValue()

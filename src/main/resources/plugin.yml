@@ -1,10 +1,10 @@
 name: CommunityBridge
-version: 2.5.2.562
-description: Community Bridging plugin based off of ChillerCrafts ForumBridge plugin
-authors: [Feaelin, NoRC, ChillerCraft]
+version: 2.6.0.0
+description: Community Bridging plugin based off of ChillerCrafts ForumBridge plugin - Updated with LuckPerms by fireboyev
+authors: [Feaelin, NoRC, ChillerCraft, fireboyev]
 website: http://dev.bukkit.org/server-mods/communitybridge-fm/
 
-softdepend: [bPermissions, GroupManager, PermissionsBukkit, PermissionsEx, Vault, zPermissions]
+softdepend: [PermissionsEx, LuckPerms, Vault]
 main: org.communitybridge.main.CommunityBridge
 
 commands:
